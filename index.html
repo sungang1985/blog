@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SunGang XP · 个人网站</title>
+  <meta name="description" content="一个仿 Windows XP 桌面的个人网站与博客。">
+  <meta name="theme-color" content="#245edb">
+  <link rel="icon" href="assets/icons/flag.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/xp.css">
+</head>
+<body>
+  <noscript>
+    <div class="noscript">这个网站是一台用 JavaScript 驱动的“Windows XP 电脑”，请启用 JavaScript 后再访问。</div>
+  </noscript>
+
+  <!-- 开机画面 -->
+  <div id="boot" class="boot" hidden>
+    <div class="boot-center">
+      <div class="boot-logo">
+        <img src="assets/icons/flag.svg" alt="">
+        <div class="boot-brand">
+          <span class="boot-owner" data-site="name">SunGang</span>
+          <span class="boot-xp">XP</span>
+        </div>
+      </div>
+      <div class="boot-edition" data-site="edition">Personal</div>
+      <div class="boot-progress" role="progressbar" aria-label="正在启动"><div class="boot-blocks"><span></span><span></span><span></span></div></div>
+    </div>
+    <div class="boot-footer">
+      <span>Copyright © <span data-site="year"></span> <span data-site="name"></span></span>
+      <span class="boot-skip">单击任意位置跳过</span>
+    </div>
+  </div>
+
+  <!-- 欢迎 / 登录屏幕 -->
+  <div id="login" class="login" hidden>
+    <div class="login-top"></div>
+    <div class="login-mid">
+      <div class="login-left">
+        <div class="login-logo">
+          <img src="assets/icons/flag.svg" alt="">
+          <div><span data-site="name">SunGang</span><b>xp</b></div>
+        </div>
+        <p class="login-hint">要开始，请单击您的用户名</p>
+      </div>
+      <div class="login-divider"></div>
+      <div class="login-right">
+        <button class="login-user">
+          <img data-site="avatar" src="assets/avatar.svg" alt="">
+          <span><b data-site="name">SunGang</b><small data-site="title"></small></span>
+        </button>
+      </div>
+      <div class="login-message" aria-live="polite"></div>
+    </div>
+    <div class="login-bottom">
+      <button class="login-power"><img src="assets/icons/shutdown.svg" alt="">关闭计算机</button>
+      <p class="login-note">在您登录之后，可以添加或更改帐户。<br>只要转到“控制面板”，单击“用户帐户”。</p>
+    </div>
+  </div>
+
+  <!-- 关机后的黑屏 -->
+  <div id="off" class="off" hidden>
+    <button id="power-on" class="power-on" aria-label="开机"><img src="assets/icons/shutdown.svg" alt=""></button>
+    <p>现在可以安全地关闭计算机了。<br>点击电源按钮重新开机。</p>
+  </div>
+
+  <!-- 桌面 -->
+  <div id="screen" class="screen" hidden>
+    <div id="desktop" class="desktop">
+      <div id="desktop-icons" class="desktop-icons"></div>
+      <div id="windows" class="windows"></div>
+    </div>
+
+    <div id="start-menu" class="start-menu" hidden></div>
+
+    <div id="taskbar" class="taskbar">
+      <button id="start-button" class="start-button" aria-label="开始">
+        <img src="assets/icons/flag.svg" alt=""><span>开始</span>
+      </button>
+      <div class="quick-launch">
+        <button id="ql-desktop" title="显示桌面" aria-label="显示桌面"><img src="assets/icons/show-desktop.svg" alt=""></button>
+        <button id="ql-ie" title="启动 Internet Explorer 浏览器" aria-label="Internet Explorer"><img src="assets/icons/ie.svg" alt=""></button>
+        <button id="ql-docs" title="我的文章" aria-label="我的文章"><img src="assets/icons/documents.svg" alt=""></button>
+      </div>
+      <div id="taskbar-buttons" class="taskbar-buttons"></div>
+      <div class="tray">
+        <button id="tray-network" title="本地连接" aria-label="网络"><img src="assets/icons/network.svg" alt=""></button>
+        <button id="tray-volume" title="音量" aria-label="音量"><img src="assets/icons/volume.svg" alt=""></button>
+        <span id="clock" class="clock">00:00</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/wm.js"></script>
+  <script src="js/apps/explorer.js"></script>
+  <script src="js/apps/ie.js"></script>
+  <script src="js/apps/notepad.js"></script>
+  <script src="js/apps/minesweeper.js"></script>
+  <script src="js/apps/paint.js"></script>
+  <script src="js/apps/cmd.js"></script>
+  <script src="js/apps/system.js"></script>
+  <script src="js/shell.js"></script>
+</body>
+</html>
